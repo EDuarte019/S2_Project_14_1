@@ -24,6 +24,18 @@ window.addEventListener("load", setStyles);
 
 function setStyles() {
       var styleNum = randInt(5);
+      var linkE = document.createElement("link");
+      linkE.setAttribute("rel", "stylesheet");
+      linkE.setAttribute("id", "fancySheet");
+      linkE.setAttribute("href", "na_style_" + styleNum + ".css");
+
+      document.head.appendChild(linkE);
+
+      var figBox = document.createElement("figure");
+      figBox.setAttribute("id", "styleThumbs");
+
+      document.getElementById("box").appendChild(figBox);
+
 }
 
 function randInt(size) {
