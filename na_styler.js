@@ -36,6 +36,40 @@ function setStyles() {
 
       document.getElementById("box").appendChild(figBox);
 
+      for (var i = 0; i <= 4; i++) {
+            var sheetIMG = document.createElement("img");
+            sheetIMG.setAttribute("src", "na_small_" + i + ".png");
+            sheetIMG.setAttribute("alt", "na_style_" + i + ".css");
+
+            sheetIMG.onclick = function (e) {
+                  linkE.setAttribute("href", e.target.alt);
+            }
+
+            figBox.appendChild(sheetIMG);
+      }
+      var thumbStyles = document.createElement("style");
+      document.head.appendChild(thumbStyles);
+
+      document.styleSheets[document.styleSheets.length - 1].insertRule(
+            "figure#styleThumbs {\
+                  position: absolute;\
+                  left: 0 px;\
+                  bottom: 0 px;\
+            }"
+      )
+      document.styleSheets[document.styleSheets.length - 1].insertRule(
+            "figure#styleThumbs img {\
+            outline: 1px solid black;\
+            opacity:0.75;\
+            } "
+      )
+      document.styleSheets[document.styleSheets.length - 1].insertRule(
+            "figure#styleThumbs img:hover{\
+            outline: 1px solid red;\
+            opacity:1.0;\
+            }"
+      )
+
 }
 
 function randInt(size) {
